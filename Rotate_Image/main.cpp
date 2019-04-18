@@ -8,7 +8,6 @@ using namespace std;
 void rotate_arbitrarily_angle(Mat &src, Mat &dst, float angle)
 {
 	float radian = (float)(angle / 180.0 * CV_PI);
-
 	//Ìî³äÍ¼Ïñ
 	int maxBorder = (int)(max(src.cols, src.rows)* 1.414); //¼´Îªsqrt(2)*max
 	int dx = (maxBorder - src.cols) / 2;
@@ -25,7 +24,7 @@ void rotate_arbitrarily_angle(Mat &src, Mat &dst, float angle)
 	float sinVal = abs(sin(radian));
 	float cosVal = abs(cos(radian));
 	Size targetSize((int)(src.cols * cosVal + src.rows * sinVal),
-		(int)(src.cols * sinVal + src.rows * cosVal));
+		 (int)(src.cols * sinVal + src.rows * cosVal));
 
 	//¼ôµô¶àÓà±ß¿ò
 	int x = (dst.cols - targetSize.width) / 2;
